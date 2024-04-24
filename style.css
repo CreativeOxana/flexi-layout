@@ -2,6 +2,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 ::after,
 ::before {
@@ -35,4 +36,31 @@ Potom zkuste třeba tři nebo čtyři sloupce.
 Pro každou variantu si pomocí devtools udělejte screenshot.
 */
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
 
+.galerie {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* zde nastavuji zobrazení na dva sloupce */
+.foto {
+  flex: 50%;
+}
+
+/* varianta pro tři sloupce / lze použít i flex: 33.3% ) */
+@media (max-width: 1200px) {
+  .foto {
+    flex: calc(100% / 3);
+  }
+}
+
+/* varianta pro čtyři sloupce */
+@media (max-width: 800px) {
+  .foto {
+    flex: 25%;
+  }
+}
